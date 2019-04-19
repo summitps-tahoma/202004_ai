@@ -1,6 +1,12 @@
 var bot = require("./bot"); //Don't change this
-bot.hostURL = 'http://WORKSPACENAME-USERNAME.c9users.io'; //Put the server url/IP adress here!
-bot.key = "testrun"; //Set your bot key to this string!
+bot.hostURL = 'http://TEACHERWORKSPACENAME-TEACHERUSERNAME.c9users.io'; //Put the server url/IP adress here!
+bot.key = "BOTKEYHERE"; //Set your bot key to this string!
+
+/* TEST CODE */
+bot.testHostURL = 'http://STUDENTWORKSPACENAME-STUDENTUSERNAME.c9users.io'; //Put the server url/IP adress here!
+bot.testKey = "testrun"; //Set your bot key to this string!
+bot.isTest = false;
+/* End Test Code */
 /***************************************************/
 //Write your code in this function!!!
 bot.direction = function(game) {

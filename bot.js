@@ -2,8 +2,15 @@ function bot() {
     console.log("Joined Queue! Waiting for game to start...");
     bot.PF = require('pathfinding');
     bot.io = require('socket.io-client');
-    bot.socket = require('socket.io-client')(bot.hostURL);
-    bot.socket.emit("name", bot.key);
+    if (!bot.isTest) {
+        bot.socket = require('socket.io-client')(bot.hostURL);
+        bot.socket.emit("name", bot.key);
+    }
+    else {
+        bot.socket = require('socket.io-client')(bot.testHostURL);
+        bot.socket.emit("name", bot.testKey);
+    }
+
 
 
     var globalGame;

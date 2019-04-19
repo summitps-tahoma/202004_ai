@@ -7,7 +7,7 @@ git push // pushes all changes to github
 */
 
 const PLAYER_NUMBER = 4; //Keep this as 4.
-const GAME_SPEED = 1; //Reccomended: 50-70 for good game visibility and speed. Speed unit of the game in milliseconds
+const GAME_SPEED = 55; //Reccomended: 50-70 for good game visibility and speed. Speed unit of the game in milliseconds
 const turnCount = 1000; //Reccomended: 1000 - 1500 for reasonable game time length. How many turns in a game. One turn is one player moving.
 const randomMap = true; //Reccomended: true. This decides whether the map is randomely generated or not. Randomely generated maps are symmetrical. If this is false, then a map will be chosen from maps.json, predrawn maps.
 
@@ -31,7 +31,6 @@ var gameData = [{}, {}, {}, {}, {}];
 var playerData = JSON.parse(fs.readFileSync("playerData.json"));
 var maps = JSON.parse(fs.readFileSync("maps.json"))
 var replay = JSON.parse(fs.readFileSync("replay.json"))
-console.log(replay);
 var router = express();
 var server = http.createServer(router);
 var io = socketio.listen(server);

@@ -15,7 +15,7 @@ function bot() {
     bot.savedData = [];
 
     var globalGame;
-    bot.socket.on("update", function(game) {
+    bot.socket.on("update", function (game) {
 
         console.log("----------------------------------------------")
         console.log("      \x1b[4m%s\x1b[0m", "Game number " + (game.gameId + 1));
@@ -48,11 +48,11 @@ function bot() {
     let avoidArr = [];
 
 
-    bot.clearAvoid = function() {
+    bot.clearAvoid = function () {
         avoidArr = [];
     }
 
-    bot.avoid = function(pos) {
+    bot.avoid = function (pos) {
 
         let enemyPos = JSON.parse(JSON.stringify(pos));
         avoidArr.push(enemyPos);
@@ -74,27 +74,24 @@ function bot() {
 
 
 
-    bot.findDistance = function(pos1, pos2, avoidBlocks) {
+    bot.findDistance = function (pos1, pos2) {
         var grid = new bot.PF.Grid(20, 20);
         grid.setWalkableAt(pos1[0], pos1[1], true);
         grid.setWalkableAt(pos2[0], pos2[1], true);
         for (let i = 0; i < globalGame.barricades.length; i++) {
             grid.setWalkableAt(globalGame.barricades[i][0], globalGame.barricades[i][1], false)
         }
-        if (avoidBlocks != false) {
-            if (avoidArr !== undefined && avoidArr.length > 0) {
-                if (avoidArr[0].constructor === Array) {
-                    for (let i = 0; i < avoidArr.length; i++) {
-                        if (avoidArr[i][0] < 20 && avoidArr[i][0] >= 0 && avoidArr[i][1] < 20 && avoidArr[i][1] >= 0) {
-                            grid.setWalkableAt(avoidArr[i][0], avoidArr[i][1], false);
-                        }
+        if (avoidArr !== undefined && avoidArr.length > 0) {
+            if (avoidArr[0].constructor === Array) {
+                for (let i = 0; i < avoidArr.length; i++) {
+                    if (avoidArr[i][0] < 20 && avoidArr[i][0] >= 0 && avoidArr[i][1] < 20 && avoidArr[i][1] >= 0) {
+                        grid.setWalkableAt(avoidArr[i][0], avoidArr[i][1], false);
                     }
-
                 }
-                else {
-                    if (avoidArr[0] < 20 && avoidArr[0] >= 0 && avoidArr[1] < 20 && avoidArr[1] >= 0) {
-                        grid.setWalkableAt(avoidArr[0], avoidArr[1], false);
-                    }
+            }
+            else {
+                if (avoidArr[0] < 20 && avoidArr[0] >= 0 && avoidArr[1] < 20 && avoidArr[1] >= 0) {
+                    grid.setWalkableAt(avoidArr[0], avoidArr[1], false);
                 }
             }
         }
@@ -105,14 +102,13 @@ function bot() {
 
 
 
-    bot.stepArray = function(pos1, pos2, avoidBlocks) {
+    bot.stepArray = function (pos1, pos2) {
         var grid = new bot.PF.Grid(20, 20);
         grid.setWalkableAt(pos1[0], pos1[1], true);
         grid.setWalkableAt(pos2[0], pos2[1], true);
         for (let i = 0; i < globalGame.barricades.length; i++) {
             grid.setWalkableAt(globalGame.barricades[i][0], globalGame.barricades[i][1], false)
         }
-        if (avoidBlocks != false) {
             if (avoidArr !== undefined && avoidArr.length > 0) {
                 if (avoidArr[0].constructor === Array) {
                     for (let i = 0; i < avoidArr.length; i++) {
@@ -127,13 +123,13 @@ function bot() {
                     }
                 }
             }
-        }
+        
         var finder = new bot.PF.AStarFinder();
         var path = finder.findPath(pos1[0], pos1[1], pos2[0], pos2[1], grid);
         return path;
     }
 
-    bot.nextStep = function(pos1, pos2, avoidBlocks) {
+    bot.nextStep = function (pos1, pos2) {
         if (pos1 === undefined || pos2 === undefined) {
             return "none";
         }
@@ -143,7 +139,6 @@ function bot() {
         for (let i = 0; i < globalGame.barricades.length; i++) {
             grid.setWalkableAt(globalGame.barricades[i][0], globalGame.barricades[i][1], false)
         }
-        if (avoidBlocks != false) {
             if (avoidArr !== undefined && avoidArr.length > 0) {
                 if (avoidArr[0].constructor === Array) {
                     for (let i = 0; i < avoidArr.length; i++) {
@@ -156,12 +151,11 @@ function bot() {
                     if (avoidArr[0] < 20 && avoidArr[0] >= 0 && avoidArr[1] < 20 && avoidArr[1] >= 0) {
                         grid.setWalkableAt(avoidArr[0], avoidArr[1], false);
                     }
-                }
             }
         }
         var finder = new bot.PF.AStarFinder();
         var path = finder.findPath(pos1[0], pos1[1], pos2[0], pos2[1], grid);
-        if (path === null || path === undefined || path.length === 0) {}
+        if (path === null || path === undefined || path.length === 0) { }
         else {
 
             if (path[1]) {
@@ -186,7 +180,7 @@ function bot() {
         }
     }
 
-    bot.checkPos = function(dirStr, pos) {
+    bot.checkPos = function (dirStr, pos) {
         let tempPosVar = JSON.parse(JSON.stringify(pos));
         if (dirStr == "north") {
             tempPosVar[1]--;
@@ -203,10 +197,7 @@ function bot() {
         return tempPosVar;
 
     }
-
-
-
-
-
+    
+    
 }
 module.exports = bot;

@@ -4,7 +4,7 @@ bot.key = "BOTKEYHERE"; //Set your bot key to this string!
 
 /* TEST CODE */
 bot.testHostURL = 'http://STUDENTWORKSPACENAME-STUDENTUSERNAME.c9users.io'; //Put the server url/IP adress here!
-bot.testKey = "testrun"; //Set your bot key to this string!
+bot.testKey = "testrun"; //Do Not Change This Key!
 bot.isTest = false;
 /* End Test Code */
 /***************************************************/

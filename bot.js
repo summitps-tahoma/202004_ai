@@ -11,7 +11,8 @@ function bot() {
         bot.socket.emit("name", bot.testKey);
     }
 
-
+    // An array to store Data from one round to another
+    bot.savedData = [];
 
     var globalGame;
     bot.socket.on("update", function(game) {

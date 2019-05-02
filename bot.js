@@ -75,7 +75,7 @@ function bot() {
 
 
     bot.findDistance = function (pos1, pos2) {
-        var grid = new bot.PF.Grid(20, 20);
+        var grid = new bot.PF.Grid(globalGame.mapSize, globalGame.mapSize);
         grid.setWalkableAt(pos1[0], pos1[1], true);
         grid.setWalkableAt(pos2[0], pos2[1], true);
         for (let i = 0; i < globalGame.barricades.length; i++) {
@@ -84,13 +84,13 @@ function bot() {
         if (avoidArr !== undefined && avoidArr.length > 0) {
             if (avoidArr[0].constructor === Array) {
                 for (let i = 0; i < avoidArr.length; i++) {
-                    if (avoidArr[i][0] < 20 && avoidArr[i][0] >= 0 && avoidArr[i][1] < 20 && avoidArr[i][1] >= 0) {
+                    if (avoidArr[i][0] < globalGame.mapSize && avoidArr[i][0] >= 0 && avoidArr[i][1] < globalGame.mapSize && avoidArr[i][1] >= 0) {
                         grid.setWalkableAt(avoidArr[i][0], avoidArr[i][1], false);
                     }
                 }
             }
             else {
-                if (avoidArr[0] < 20 && avoidArr[0] >= 0 && avoidArr[1] < 20 && avoidArr[1] >= 0) {
+                if (avoidArr[0] < globalGame.mapSize && avoidArr[0] >= 0 && avoidArr[1] < globalGame.mapSize && avoidArr[1] >= 0) {
                     grid.setWalkableAt(avoidArr[0], avoidArr[1], false);
                 }
             }
@@ -103,7 +103,7 @@ function bot() {
 
 
     bot.stepArray = function (pos1, pos2) {
-        var grid = new bot.PF.Grid(20, 20);
+        var grid = new bot.PF.Grid(globalGame.mapSize, globalGame.mapSize);
         grid.setWalkableAt(pos1[0], pos1[1], true);
         grid.setWalkableAt(pos2[0], pos2[1], true);
         for (let i = 0; i < globalGame.barricades.length; i++) {
@@ -112,13 +112,13 @@ function bot() {
             if (avoidArr !== undefined && avoidArr.length > 0) {
                 if (avoidArr[0].constructor === Array) {
                     for (let i = 0; i < avoidArr.length; i++) {
-                        if (avoidArr[i][0] < 20 && avoidArr[i][0] >= 0 && avoidArr[i][1] < 20 && avoidArr[i][1] >= 0) {
+                        if (avoidArr[i][0] < globalGame.mapSize && avoidArr[i][0] >= 0 && avoidArr[i][1] < globalGame.mapSize && avoidArr[i][1] >= 0) {
                             grid.setWalkableAt(avoidArr[i][0], avoidArr[i][1], false);
                         }
                     }
                 }
                 else {
-                    if (avoidArr[0] < 20 && avoidArr[0] >= 0 && avoidArr[1] < 20 && avoidArr[1] >= 0) {
+                    if (avoidArr[0] < globalGame.mapSize && avoidArr[0] >= 0 && avoidArr[1] < globalGame.mapSize && avoidArr[1] >= 0) {
                         grid.setWalkableAt(avoidArr[0], avoidArr[1], false);
                     }
                 }
@@ -133,7 +133,7 @@ function bot() {
         if (pos1 === undefined || pos2 === undefined) {
             return "none";
         }
-        var grid = new bot.PF.Grid(20, 20);
+        var grid = new bot.PF.Grid(globalGame.mapSize, globalGame.mapSize);
         grid.setWalkableAt(pos1[0], pos1[1], true);
         grid.setWalkableAt(pos2[0], pos2[1], true);
         for (let i = 0; i < globalGame.barricades.length; i++) {
@@ -142,13 +142,13 @@ function bot() {
             if (avoidArr !== undefined && avoidArr.length > 0) {
                 if (avoidArr[0].constructor === Array) {
                     for (let i = 0; i < avoidArr.length; i++) {
-                        if (avoidArr[i][0] < 20 && avoidArr[i][0] >= 0 && avoidArr[i][1] < 20 && avoidArr[i][1] >= 0) {
+                        if (avoidArr[i][0] < globalGame.mapSize && avoidArr[i][0] >= 0 && avoidArr[i][1] < globalGame.mapSize && avoidArr[i][1] >= 0) {
                             grid.setWalkableAt(avoidArr[i][0], avoidArr[i][1], false);
                         }
                     }
                 }
                 else {
-                    if (avoidArr[0] < 20 && avoidArr[0] >= 0 && avoidArr[1] < 20 && avoidArr[1] >= 0) {
+                    if (avoidArr[0] < globalGame.mapSize && avoidArr[0] >= 0 && avoidArr[1] < globalGame.mapSize && avoidArr[1] >= 0) {
                         grid.setWalkableAt(avoidArr[0], avoidArr[1], false);
                     }
             }

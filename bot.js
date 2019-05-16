@@ -51,9 +51,9 @@ function bot() {
     bot.clearAvoid = function () {
         avoidArr = [];
     }
-
+    
+    // Adds a PLUS shaped area to the avoid array
     bot.avoid = function (pos) {
-
         let enemyPos = JSON.parse(JSON.stringify(pos));
         avoidArr.push(enemyPos);
         if (globalGame.myBase.pos[0] != pos[0] && globalGame.myBase.pos[1] != pos[1]) {
@@ -70,6 +70,12 @@ function bot() {
             enemyPos[1]++;
             avoidArr.push(enemyPos);
         }
+    }
+    
+    // Adds a single space to the avoidarray
+    bot.avoidSpace = function(pos){
+                let enemyPos = JSON.parse(JSON.stringify(pos));
+        avoidArr.push(enemyPos);
     }
 
 

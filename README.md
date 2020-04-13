@@ -14,9 +14,9 @@ Setup
 
   - Edit test.js, change to test.js file test setting
     From
-      bot.isTest = false;  
+      `bot.isTest = false;`
     To
-      bot.isTest = true;  
+      `bot.isTest = true;`
     Save
 
 Interesting Files
@@ -30,7 +30,7 @@ Interesting Files
     make edits in this file, or make copies with related names
     (ex: test2.js, cooltrick.js, debug.js, ...)
     To run this bot, open a terminal
-      $ node test.js
+      `$ node test.js`
       use Ctrl C to stop
 
   - server.js
@@ -39,7 +39,7 @@ Interesting Files
     terminal windows - server will be run in one terminal,
     bot will be run in a second window.
     To run this in a _seperate_ terminial.  
-      $ node server.js
+      `$ node server.js`
       use Ctrl C to stop
 
 Stay tuned for additional information.

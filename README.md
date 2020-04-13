@@ -5,7 +5,9 @@ Setup
 
   - Open terminal
     Change directory to folder where this README.md file
+    ```
     $ cd 202004_ai
+    ```
 
   - Install dependencies (do only once)
     $ npm install

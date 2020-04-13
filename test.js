@@ -3,9 +3,10 @@ bot.hostURL = 'http://TEACHERWORKSPACENAME-TEACHERUSERNAME.c9users.io'; //Put th
 bot.key = "BOTKEYHERE"; //Set your bot key to this string!
 
 /* TEST CODE */
-bot.testHostURL = 'http://STUDENTWORKSPACENAME-STUDENTUSERNAME.c9users.io'; //Put the server url/IP adress here!
+bot.testHostURL = 'http://127.0.0.1:8080'; //Put the server url/IP adress here!
+//  bot.testHostURL = 'http://STUDENTWORKSPACENAME-STUDENTUSERNAME.c9users.io';  //  stay tuned for this!
 bot.testKey = "testrun"; //Do Not Change This Key!
-bot.isTest = false;
+bot.isTest = true;
 /* End Test Code */
 /***************************************************/
 //Write your code in this function!!!

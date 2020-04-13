@@ -4,7 +4,7 @@ Starter bot for students
 Setup
 
   - Open terminal
-    Change directory to folder where this README.md file
+Change directory to folder where this README.md file
     ```
     $ cd 202004_ai
     ```

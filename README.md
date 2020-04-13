@@ -10,7 +10,9 @@ Setup
     ```
 
   - Install dependencies (do only once)
+    ```
     $ npm install
+    ```
 
   - Edit test.js, change to test.js file test setting
     From

@@ -47,4 +47,5 @@ Interesting Files
 Stay tuned for additional information.
 
 Related
+  - setup.txt
   - https://github.com/smtcs/studentbot

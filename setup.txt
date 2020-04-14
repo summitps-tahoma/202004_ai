@@ -1,0 +1,66 @@
+# 202004_ai
+Starter bot for students
+
+Setup
+
+  - Open terminal
+    Change directory to folder where this README.md file
+    $ cd 202004_ai
+
+    $ pwd
+      /home/ec2-user/environment/ai/202004_ai
+    
+    $ ls -lh
+      bot.js
+      client
+      LICENSE
+      maps.json
+      node_modules
+      package.json
+      package-lock.json
+      playerDatabase.json
+      playerData.json
+      pollen_cp2.js
+      README.md
+      replay.json
+      server.js
+      setup.txt
+      stable.js
+      test.js
+
+  - Install dependencies (do only once)
+    $ npm install
+
+  - Edit test.js, change to test.js file test setting
+    From
+      `bot.isTest = false;`
+    To
+      `bot.isTest = true;`
+    Save
+
+Interesting Files
+
+  - stable.js
+    Never edit this, it is a known working bot file, though
+    it does not do anything interesting.
+
+  - server.js
+    To test a bot file, need to have a server that will
+    allow bot to connect to and run.  This means in two different
+    terminal windows - server will be run in one terminal,
+    bot will be run in a second window.
+    To run this in a _seperate_ terminial.  
+    $ node server.js
+      [ use Ctrl C to stop ]
+
+  - test.js
+    This is a copy of stable.js.  Typically students will
+    make edits in this file, or make copies with related names
+    (ex: test2.js, cooltrick.js, debug.js, ...)
+    To run this bot, open a terminal
+    $ node test.js
+      [ use Ctrl C to stop,
+        ALWAYS stop this before stopping server ]
+
+Related
+  - https://artificial-intelligence.rickatech.repl.co/
